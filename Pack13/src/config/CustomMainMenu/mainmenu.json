@@ -14,7 +14,7 @@
       "texture": "mainmenu:button.png",
       "action": {
         "type": "connectToServer",
-        "ip": "teamfruit.net:25519"
+        "ip": "teamfruit.net"
       }
     },
     "discord": {

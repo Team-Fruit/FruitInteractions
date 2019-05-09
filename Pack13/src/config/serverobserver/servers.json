@@ -2,7 +2,7 @@
 	"servers": [
 		{
 			"serverName": "FruitServer",
-			"serverIP": "teamfruit.net:25519"
+			"serverIP": "teamfruit.net"
 		}
 	]
 }
