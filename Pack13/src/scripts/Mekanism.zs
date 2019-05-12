@@ -8,9 +8,28 @@ print("---------------Mekanism Start------------------");
 val assembler = mods.gregtech.recipe.RecipeMap.getByName("assembler");
 val aSmelter = mods.gregtech.recipe.RecipeMap.getByName("alloy_smelter");
 val blast_furnace = mods.gregtech.recipe.RecipeMap.getByName("blast_furnace");
+val chemReactor = mods.gregtech.recipe.RecipeMap.getByName("chemical_reactor");
 
     #Tooltips
 <mekanism:basicblock:14>.addTooltip("Solar Panels cannot be obtained; external heat must be provided to the structure");
+
+	#mekanism hydrogen and oxygen
+chemReactor.recipeBuilder()
+	.fluidInputs([<liquid:oxygen> * 1000])
+	.fluidOutputs([<liquid:liquidoxygen> * 1000])
+	.notConsumable(integratedCircuit.withTag({Configuration: 5}))
+    .duration(20)
+    .EUt(28)
+    .buildAndRegister();
+
+chemReactor.recipeBuilder()
+	.notConsumable(integratedCircuit.withTag({Configuration: 5}))
+	.fluidInputs([<liquid:hydrogen> * 1000])
+	.fluidOutputs([<liquid:liquidhydrogen> * 1000])
+    .duration(20)
+    .EUt(28)
+    .buildAndRegister();
+
 
 	#Redundant/Useless Mekanism Smelting Recipes
 furnace.remove(<mekanism:ingot:1>);

@@ -36,7 +36,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("tinkers:creative", "", 100
 mods.tconstruct.Casting.removeTableRecipe(<minecraft:glass_pane>);
 mods.tconstruct.Casting.addTableRecipe(<minecraft:glass_pane>, null, <liquid:glass>, 54);
 mods.tconstruct.Casting.removeBasinRecipe(<tconstruct:clear_glass>);
-mods.tconstruct.Casting.addTableRecipe(<tconstruct:clear_glass>, null, <liquid:glass>, 144);
+mods.tconstruct.Casting.addBasinRecipe(<tconstruct:clear_glass>, null, <liquid:glass>, 144);
 mods.tconstruct.Melting.removeRecipe(<liquid:glass>);
 mods.tconstruct.Melting.addRecipe(<liquid:glass> * 144, <ore:blockGlass>);
 mods.tconstruct.Melting.addRecipe(<liquid:glass> * 144, <ore:sand>);

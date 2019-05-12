@@ -56,6 +56,7 @@ var squeezerOreDicts as string[][string] = {
 		"Magnetite",
 		"BrownLimonite",
 	],
+	"Jasper" : ["Jasper"],
 	"Lapis" : ["Lapis"],
 	"Lead" : ["Lead"],
 	"Lepidolite" : ["Lepidolite"],
@@ -72,6 +73,7 @@ var squeezerOreDicts as string[][string] = {
 	"Olivine" : ["Olivine"],
 	"Phosphor" : ["Phosphor"],
 	"Redstone" : ["Redstone"],
+	"GarnetRed" : ["GarnetRed"],
 	"Ruby" : ["Ruby"],
 	"Rutile" : ["Rutile"],
 	"Quartzite" : ["Quartzite"],
@@ -85,6 +87,7 @@ var squeezerOreDicts as string[][string] = {
 	"Sulfur" : ["Sulfur"],
 	"Talc" : ["Talc]"],
 	"Tantalite" : ["Tantalite"],
+	"Topaz" : ["Topaz"],
 	"Tin" : [
 		"Tin"
 	],
@@ -152,7 +155,10 @@ var autoclaveMapNew as IOreDictEntry[IOreDictEntry] = {
 	<ore:dustOlivine> : <ore:gemOlivine>,
 	<ore:dustOpal> : <ore:gemOpal>,
 	<ore:dustEmerald> : <ore:gemEmerald>,
-	<ore:dustEnderPearl> : <ore:gemEnderPearl>
+	<ore:dustEnderPearl> : <ore:gemEnderPearl>,
+	<ore:dustTopaz> : <ore:gemTopaz>,
+	<ore:dustJasper> : <ore:gemJasper>,
+	<ore:dustGarnetRed> : <ore:gemGarnetRed>
 };
 
 for dust, gem in autoclaveMapNew {
@@ -216,6 +222,7 @@ var metallurgyOreDicts as string[] = [
 	"BandedIron",
 	"Magnetite",
 	"BrownLimonite",
+	"Jasper",
 	"Lapis",
 	"Lead",
 	"Lepidolite",
@@ -231,6 +238,7 @@ var metallurgyOreDicts as string[] = [
 	"Phosphor",
 	"Platinum",
 	"Redstone",
+	"GarnetRed",
 	"Ruby",
 	"Rutile",
 	"Quartzite",
@@ -246,6 +254,7 @@ var metallurgyOreDicts as string[] = [
 	"Sulfur",
 	"Talc",
 	"Tantalite",
+	"Topaz",
 	"Tin",
 	"Tungstate",
 	"Uraninite",
@@ -321,7 +330,7 @@ var materialMetalMap as int[string] = {
 	"Glauconite" : 1,
 	"Gold" : 1,
 	"Graphite" : 1,
-	"Grossular" : 1,
+	"Grossular" : 6,
 	"Ilmenite" : 1,
 	"Iridium" : 1,
 	"Iron" : 1,
@@ -340,6 +349,7 @@ var materialMetalMap as int[string] = {
 	"Niobium" : 1,
 	"Garnierite" : 2,
 	"Pentlandite" : 2,
+	"Platinum" : 1,
 	"Phosphor" : 3,
 	"Redstone" : 5,
 	"Silver" : 1,
@@ -487,6 +497,7 @@ var eggMetalOreMap as string[IData[]] = {
 	["Gold", "Gold", 4] : "Gold",
 	["Magnetite", "Gold", 1] : "Gold",
 	["VanadiumMagnetite", "Gold", 1] : "Gold",
+	["Grossular", "Grossular", 4] : "Grossular",
 	["VanadiumMagnetite", "VanadiumMagnetite", 4] : "VanadiumMagnetite",
 	["Iridium", "Iridium", 1] : "Iridium",
 	["BandedIron", "Iron", 4] : "Iron",
@@ -662,6 +673,9 @@ var denseMetallurgy as string[][IItemStack] = {
 	],
 	<ore:denseOreNiobium>.firstItem : [
 		"Niobium"
+	],
+	<ore:denseOrePlatinum>.firstItem: [
+		"Platinum"
 	],
 	<ore:denseOreRedstone>.firstItem : [
 		"Redstone"

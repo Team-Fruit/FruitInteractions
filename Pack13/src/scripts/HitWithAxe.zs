@@ -1,4 +1,6 @@
 import mods.hitwithaxe.Chopping;
+import crafttweaker.item.IItemStack;
+import mods.gregtech.recipe.RecipeMap;
 
 //Oak
 Chopping.addRecipe("minecraft:log", 0, "hitwithaxe:debarked_oak", 1, <hitwithaxe:bark:15>); //Y Axis
@@ -130,3 +132,132 @@ Chopping.addRecipe("thaumcraft:plank_silverwood", 32767, <minecraft:stick> * 2);
 Chopping.addRecipe("thaumcraft:plank_greatwood", 32767, <minecraft:stick> * 2);
 Chopping.addRecipe("traverse:fir_planks", 32767, <minecraft:stick> * 2);
 Chopping.addRecipe("randomthings:spectreplank", 32767, <minecraft:stick> * 2);
+
+var woodMap as IItemStack[][IItemStack] = {
+	<minecraft:log2> : [
+		<hitwithaxe:debarked_acacia>,
+		<minecraft:planks:4>,
+		<hitwithaxe:bark>
+	],
+	<plants2:nether_log> : [
+		<hitwithaxe:debarked_ash>,
+		<plants2:planks>,
+		<hitwithaxe:bark:1>
+	],
+	<minecraft:log:2> : [
+		<hitwithaxe:debarked_birch>,
+		<minecraft:planks:2>,
+		<hitwithaxe:bark:2>
+	],
+	<plants2:log_0> : [
+		<hitwithaxe:debarked_black_kauri>,
+		<plants2:planks:2>,
+		<hitwithaxe:bark:3>
+	],
+	<plants2:nether_log:1> : [
+		<hitwithaxe:debarked_blaze>,
+		<plants2:planks:1>,
+		<hitwithaxe:bark:4>
+	],
+	<plants2:log_0:1> : [
+		<hitwithaxe:debarked_brazillian_pine>,
+		<plants2:planks:3>,
+		<hitwithaxe:bark:5>
+	],
+	<plants2:crystal_log> : [
+		<hitwithaxe:debarked_crystal>,
+		<plants2:crystal_planks>,
+		<hitwithaxe:bark:6>
+	],
+	<plants2:crystal_log:1> : [
+		<hitwithaxe:debarked_dark_crystal>,
+		<plants2:crystal_planks:1>,
+		<hitwithaxe:bark:7>
+	],
+	<minecraft:log2:1> : [
+		<hitwithaxe:debarked_dark_oak>,
+		<minecraft:planks:5>,
+		<hitwithaxe:bark:8>
+	],
+	<minecraft:log:3> : [
+		<hitwithaxe:debarked_jungle>,
+		<minecraft:planks:3>,
+		<hitwithaxe:bark:12>
+	],
+	<integrateddynamics:menril_log> : [
+		<hitwithaxe:debarked_menril>,
+		<integrateddynamics:menril_planks>,
+		<hitwithaxe:bark:13>
+	],
+	<plants2:log_0:3> : [
+		<hitwithaxe:debarked_murray_pine>,
+		<plants2:planks:5>,
+		<hitwithaxe:bark:14>
+	],
+	<minecraft:log> : [
+		<hitwithaxe:debarked_oak>,
+		<minecraft:planks>,
+		<hitwithaxe:bark:15>
+	],
+	<thaumcraft:log_silverwood> : [
+		<hitwithaxe:debarked_silverwood>,
+		<thaumcraft:plank_silverwood>,
+		<hitwithaxe:bark:18>
+	],
+	<randomthings:spectrelog> : [
+		<hitwithaxe:debarked_spectre>,
+		<randomthings:spectreplank>,
+		<hitwithaxe:bark:19>
+	],
+	<minecraft:log:1> : [
+		<hitwithaxe:debarked_spruce>,
+		<minecraft:planks:1>,
+		<hitwithaxe:bark:20>
+	],
+	<rustic:log:1> : [
+		<hitwithaxe:debarked_ironwood>,
+		<rustic:planks:1>,
+		<hitwithaxe:bark:25>
+	],
+	<rustic:log> : [
+		<hitwithaxe:debarked_olive>,
+		<rustic:planks>,
+		<hitwithaxe:bark:27>
+	]
+};
+
+for inputLog, outputs in woodMap {
+	var debarkedLog = outputs[0];
+	var planks = outputs[1];
+	var bark = outputs[2];
+
+	mods.gregtech.recipe.RecipeMap.getByName("cutting_saw").recipeBuilder()
+		.inputs(inputLog)
+		.fluidInputs(<liquid:water> * 50)
+		.outputs([debarkedLog, bark * 2])
+		.duration(400)
+		.EUt(7)
+		.buildAndRegister();
+
+	mods.gregtech.recipe.RecipeMap.getByName("cutting_saw").recipeBuilder()
+		.inputs(debarkedLog)
+		.fluidInputs(<liquid:water> * 50)
+		.outputs(planks * 6)
+		.duration(400)
+		.EUt(7)
+		.buildAndRegister();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

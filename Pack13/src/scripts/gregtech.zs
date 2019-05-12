@@ -52,6 +52,20 @@ recipes.addShaped(<gregtech:meta_tool:7>.withTag({"GT.ToolStats": {PrimaryMateri
 mods.jei.JEI.addItem(<gregtech:meta_tool:7>.withTag({"GT.ToolStats": {PrimaryMaterial: "rubber", MaxDurability: 256, DigSpeed: 4.0 as float, AttackDamage: 1.0 as float, HarvestLevel: 1}}));
 	
 
+	#Beacon Pulverization Nerf
+macerator.findRecipe(8, 
+	[<minecraft:beacon>],
+	[null])
+	.remove();
+
+macerator.recipeBuilder()
+	.inputs(<minecraft:beacon>)
+	.outputs(<ore:dustGlass>.firstItem * 5)
+	.chancedOutput(<ore:powderMana>.firstItem * 4, 10000)
+	.chancedOutput(<ore:dustDiamond>.firstItem * 4, 10000)
+	.duration(30)
+	.EUt(7)
+	.buildAndRegister();
 
 	#Lutetium in Thermal Centrifurge
 thermalCent.findRecipe(60, 
@@ -103,7 +117,6 @@ recipes.addShaped(<ore:craftingDiamondBlade>.firstItem, [
 
 	#salt water
 mixer.findRecipe(8, [<ore:itemSalt>.firstItem], [<liquid:water> * 1000]).remove();	
-
 chemReactor.findRecipe(30, [<ore:dustNetherQuartz>.firstItem*3, <ore:dustSodium>.firstItem], [<liquid:water> * 1000]).remove();	
 
 	#Salt water
@@ -340,14 +353,14 @@ assembler.recipeBuilder()
 		.EUt(8)
 		.buildAndRegister();
 
-	assembler.recipeBuilder()
+assembler.recipeBuilder()
 		.inputs(<gregtech:boiler_firebox_casing:1>, <ore:plateTitanium> *2)
 		.outputs(<gregtech:boiler_firebox_casing:2>)
 		.duration(50)
 		.EUt(8)
 		.buildAndRegister();
 
-	assembler.recipeBuilder()
+assembler.recipeBuilder()
 		.inputs(<gregtech:boiler_casing:1>, <ore:plateTitanium> *5)
 		.outputs(<gregtech:boiler_casing:2>)
 		.duration(50)
@@ -1257,6 +1270,9 @@ var gtFurnaceRemovals as string[][IIngredient] = {
 	<ore:gemSodalite> : ["Sodalite"],
 	<ore:gemTerraInfused> : ["TerraInfused"],
 	<ore:gemGreenSapphire> : ["GreenSapphire"],
+	<ore:gemGarnetRed> : ["GarnetRed"],
+	<ore:gemTopaz> : ["Topaz"],
+	<ore:gemJasper> : ["Jasper"]
 };
 
 for furnaceOutput, furnaceInputs in gtFurnaceRemovals {
@@ -1320,7 +1336,7 @@ var carpetCableFixSingle as IOreDictEntry[IOreDictEntry] = {
 		<ore:wireGtSingleCobalt> : <ore:cableGtSingleCobalt>,
 		<ore:wireGtSingleSolderingAlloy> : <ore:cableGtSingleSolderingAlloy>,
 		<ore:wireGtSingleZinc> : <ore:cableGtSingleZinc>,
-		<ore:cableGtSingleLead> : <ore:wireGtSingleLead>
+		<ore:wireGtSingleLead> : <ore:cableGtSingleLead>
 		};
 for input, output in carpetCableFixSingle {
 	assembler.recipeBuilder()
@@ -1339,7 +1355,7 @@ var carpetCableFixDouble as IOreDictEntry[IOreDictEntry] = {
 		<ore:wireGtDoubleCobalt> : <ore:cableGtDoubleCobalt>,
 		<ore:wireGtDoubleSolderingAlloy> : <ore:cableGtDoubleSolderingAlloy>,
 		<ore:wireGtDoubleZinc> : <ore:cableGtDoubleZinc>,
-		 <ore:wireGtDoubleLead> : <ore:cableGtDoubleLead>
+		<ore:wireGtDoubleLead> : <ore:cableGtDoubleLead>
 	};
 for input, output in carpetCableFixDouble {
 	assembler.recipeBuilder()
@@ -1358,7 +1374,7 @@ var carpetCableFixQuadruple as IOreDictEntry[IOreDictEntry] = {
 		<ore:wireGtQuadrupleCobalt> : <ore:cableGtQuadrupleCobalt>,
 		<ore:wireGtQuadrupleSolderingAlloy> : <ore:cableGtQuadrupleSolderingAlloy>,
 		<ore:wireGtQuadrupleZinc> : <ore:cableGtQuadrupleZinc>,
-		<ore:cableGtQuadrupleLead> : <ore:wireGtQuadrupleLead>
+		<ore:wireGtQuadrupleLead> : <ore:cableGtQuadrupleLead>
 };
 for input, output in carpetCableFixQuadruple {
 	assembler.recipeBuilder()
@@ -1377,7 +1393,7 @@ var carpetCableFixOctal as IOreDictEntry[IOreDictEntry] = {
 		<ore:wireGtOctalCobalt> : <ore:cableGtOctalCobalt>,
 		<ore:wireGtOctalSolderingAlloy> : <ore:cableGtOctalSolderingAlloy>,
 		<ore:wireGtOctalZinc> : <ore:cableGtOctalZinc>,
-		<ore:cableGtOctalLead> : <ore:wireGtOctalLead>
+		<ore:wireGtOctalLead> : <ore:cableGtOctalLead>
 };
 for input, output in carpetCableFixOctal {
 	assembler.recipeBuilder()
@@ -1396,7 +1412,7 @@ var carpetCableFixHex as IOreDictEntry[IOreDictEntry] = {
 		<ore:wireGtHexCobalt> : <ore:cableGtHexCobalt>,
 		<ore:wireGtHexSolderingAlloy> : <ore:cableGtHexSolderingAlloy>,
 		<ore:wireGtHexZinc> : <ore:cableGtHexZinc>,
-		<ore:cableGtHexLead> : <ore:wireGtHexLead>
+		<ore:wireGtHexLead> : <ore:cableGtHexLead>
 };
 for input, output in carpetCableFixHex {
 	assembler.recipeBuilder()
@@ -1435,24 +1451,6 @@ assembler.recipeBuilder()
     .duration(120)
     .EUt(480)
     .buildAndRegister();
-
-#mekanism hydrogen and oxygen
-chemReactor.recipeBuilder()
-	.notConsumable(<metaitem:circuit.integrated>.withTag({Configuration: 1}))
-	.fluidInputs([<liquid:oxygen> * 1000])
-	.fluidOutputs([<liquid:liquidoxygen> * 1000])
-    .duration(20)
-    .EUt(28)
-    .buildAndRegister();
-
-chemReactor.recipeBuilder()
-	.notConsumable(<metaitem:circuit.integrated>.withTag({Configuration: 1}))
-	.fluidInputs([<liquid:hydrogen> * 1000])
-	.fluidOutputs([<liquid:liquidhydrogen> * 1000])
-    .duration(20)
-    .EUt(28)
-    .buildAndRegister();
-
 
 #Iron rod crafted
 recipes.remove(<ore:stickIron>.firstItem);

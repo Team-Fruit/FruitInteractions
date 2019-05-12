@@ -7,7 +7,13 @@ function createRecipeName(machineName as string, recipeName as string) as string
 	return machineName + "_" + recipeName;
 }
 
-
+/*	#CharocoalFromMenril
+mods.modularmachinery.RecipeBuilder.newBuilder(createRecipeName(machineName, "charcoalfromMenrilWood"), machineName, 250)
+	.addItemOutput(<minecraft:coal:1>)
+	.addItemInput(<ore:logMenril>)
+	.addFluidOutput(<liquid:creosote> * 100)
+	.build();
+*/
 	#Coke coal from charcoal
 mods.modularmachinery.RecipeBuilder.newBuilder(createRecipeName(machineName, "cokeCoalfromCharcoal"), machineName, 500)
 	.addItemOutput(<ore:gemCoke>.firstItem * 1)
@@ -36,9 +42,3 @@ mods.modularmachinery.RecipeBuilder.newBuilder(createRecipeName(machineName, "ch
 	.addFluidOutput(<liquid:creosote> * 50)
 	.build();
 	
-	#CharocoalFromMenril
-mods.modularmachinery.RecipeBuilder.newBuilder(createRecipeName(machineName, "charcoalfromMenrilWood"), machineName, 250)
-	.addItemOutput(<minecraft:coal:1>)
-	.addItemInput(<ore:logMenril>)
-	.addFluidOutput(<liquid:creosote> * 100)
-	.build();

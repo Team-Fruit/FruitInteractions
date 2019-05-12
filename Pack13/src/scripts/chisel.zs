@@ -30,5 +30,8 @@ recipes.remove(<chisel:blockuranium>);
 recipes.remove(<chisel:block_coal>);
 recipes.remove(<chisel:block_charcoal>);
 
-//mods.chisel.Carving.addVariation("blockAluminum", blockAluminium);
+	#Letting Aluminium Blocks get Chiseled
+furnace.addRecipe(<chisel:blockaluminum:2>, <ore:blockAluminium>);
+furnace.addRecipe(<ore:blockAluminium>.firstItem, <chisel:blockaluminum:2>);
+
 print("----------------Chisel End-------------------");

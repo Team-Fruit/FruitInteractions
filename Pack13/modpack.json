@@ -112,7 +112,7 @@
         "name" : "ServerObserver",
         "description" : "サーバーを監視し通知することができます。<br>\nまた、自動的にログインをすることができます。",
         "recommendation" : "starred",
-        "selected" : false
+        "selected" : true
       },
       "files" : {
         "include" : [
@@ -159,7 +159,7 @@
       },
       "files" : {
         "include" : [
-          "options.txt"
+          "mods/DefaultOptions*"
         ],
         "exclude" : [ ]
       }
@@ -167,6 +167,7 @@
   ],
   "userFiles" : {
     "include" : [
+      "options.txt",
       "optionsshaders.txt",
       ".curseclient",
       "manifest.json",
