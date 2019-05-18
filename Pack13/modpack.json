@@ -96,7 +96,7 @@
     {
       "properties" : {
         "name" : "OptiFine",
-        "description" : "軽量化、描画改善Mod",
+        "description" : "軽量化、描画改善Mod、影Mod",
         "recommendation" : null,
         "selected" : false
       },
@@ -152,7 +152,7 @@
     },
     {
       "properties" : {
-        "name" : "options.txt",
+        "name" : "デフォルトオプション",
         "description" : "NONE指定のキーコンフィグ",
         "recommendation" : null,
         "selected" : true
@@ -160,6 +160,34 @@
       "files" : {
         "include" : [
           "mods/DefaultOptions*"
+        ],
+        "exclude" : [ ]
+      }
+    },
+    {
+      "properties" : {
+        "name" : "VanillaFix",
+        "description" : "軽量化Mod",
+        "recommendation" : null,
+        "selected" : false
+      },
+      "files" : {
+        "include" : [
+          "mods/VanillaFix*"
+        ],
+        "exclude" : [ ]
+      }
+    },
+    {
+      "properties" : {
+        "name" : "SmoothFont",
+        "description" : "文字がきれいになるよ",
+        "recommendation" : null,
+        "selected" : false
+      },
+      "files" : {
+        "include" : [
+          "mods/SmoothFont*"
         ],
         "exclude" : [ ]
       }
