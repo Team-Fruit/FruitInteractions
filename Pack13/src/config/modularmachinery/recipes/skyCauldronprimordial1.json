@@ -5,10 +5,8 @@
 	"requirements": [{
 			"type": "daylight",
 			"io-type": "input",
-			"daylight": [
-				12000,
-				0
-			]
+			"start": 12000,
+			"stop": 0
 		},
 		{
 			"type": "meklaser",

@@ -57,7 +57,10 @@ val solidifier = mods.gregtech.recipe.RecipeMap.getByName("fluid_solidifier");
 	mods.jei.JEI.removeAndHide(<enderio:item_endergy_conduit:1>);
 	mods.jei.JEI.removeAndHide(<enderio:item_endergy_conduit:2>);
 	mods.jei.JEI.removeAndHide(<enderio:item_endergy_conduit:3>);
-
+	
+	#slicensplice
+	mods.jei.JEI.removeAndHide(<enderio:block_decoration2:9>);
+	mods.jei.JEI.removeAndHide(<enderio:block_slice_and_splice>);
 
 	#add message about overworld creation
 	<enderio:block_infinity_fog>.addTooltip(format.darkRed("Created by chance when left clicking bedrock with flint. Consumes 4xp and often destroys the flint used."));
@@ -177,6 +180,40 @@ for i in energyDisabled {
 	mods.jei.JEI.removeAndHide(i);
 }
 
+	var SagMillStuff as IItemStack[] = [
+		<enderio:block_decoration2:8>,
+		<enderio:block_sag_mill>,
+		<enderio:item_alloy_ball>,
+		<enderio:item_alloy_ball:1>,
+		<enderio:item_alloy_ball:2>,
+		<enderio:item_alloy_ball:3>,
+		<enderio:item_alloy_ball:4>,
+		<enderio:item_alloy_ball:5>,
+		<enderio:item_alloy_ball:6>,
+		<enderio:item_alloy_ball:7>,
+		<enderio:item_alloy_ball:8>,
+		<enderio:item_alloy_ball:9>,
+		<enderio:item_material:57>,
+		<enderio:item_material:58>,
+		<enderio:item_material:59>,
+		<enderio:item_alloy_endergy_ball>,
+		<enderio:item_alloy_endergy_ball:1>,
+		<enderio:item_alloy_endergy_ball:2>,
+		<enderio:item_alloy_endergy_ball:3>,
+		<enderio:item_alloy_endergy_ball:4>,
+		<enderio:item_alloy_endergy_ball:5>,
+		<enderio:item_alloy_endergy_ball:6>,
+		<enderio:item_capacitor_stellar>,
+		<enderio:item_capacitor_totemic>,
+		<enderio:item_capacitor_crystalline>,
+		<enderio:item_capacitor_melodic>,
+		<enderio:item_capacitor_vivid>
+		];
+
+for i in SagMillStuff {
+	mods.jei.JEI.removeAndHide(i);
+}		
+
 	#Enchanter
 	mods.jei.JEI.removeAndHide(<enderio:block_enchanter>);
 
@@ -197,6 +234,25 @@ recipes.addShapeless(<ore:dustWheat>.firstItem, [<enderio:item_material:21>]);
     .duration(400)
     .EUt(24)
     .buildAndRegister();
+
+	#zlogic controller
+	assembler.recipeBuilder()
+    .inputs(<minecraft:skull:2>,<ore:ingotSoularium>*2, <ore:waferSilicon>*2)
+    .fluidInputs([<liquid:redstone> * 144])
+    .outputs(<ore:skullZombieController>.firstItem)
+    .duration(160)
+    .EUt(48)
+    .buildAndRegister();	
+
+	#Skeletal contractor
+	assembler.recipeBuilder()
+    .inputs(<minecraft:skull>,<ore:ingotElectricalSteel>*2, <ore:waferSilicon>*2)
+    .fluidInputs([<liquid:redstone> * 144])
+    .outputs(<ore:skullSkeletalContractor>.firstItem)
+    .duration(160)
+    .EUt(28)
+    .buildAndRegister();	
+
 
 	#ender resonator
 	assembler.recipeBuilder()
@@ -447,6 +503,8 @@ mixer.recipeBuilder()
 	[<minecraft:redstone>, <enderio:item_basic_item_filter>, <minecraft:redstone>],
 	[<minecraft:redstone>, <minecraft:redstone>, <minecraft:redstone>]]);
 
+	#industrial chassis
+	recipes.addShaped(<enderio:item_material:1>, [[<enderio:item_material:69>, <enderio:item_material:69>, <enderio:item_material:69>],[<enderio:item_material:69>, <gregtech:machine:502>, <enderio:item_material:69>], [<enderio:item_material:69>, <enderio:item_material:69>, <enderio:item_material:69>]]);
 
 
 print("----------------Ender IO End-------------------");

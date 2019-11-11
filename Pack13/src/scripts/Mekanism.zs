@@ -99,11 +99,7 @@ recipes.addShaped(<mekanism:transmitter:1>.withTag({tier: 0}) * 8, [
 	[<mekanism:transmitter:3>, <mekanism:transmitter:3>, <mekanism:transmitter:3>]]);
 	
 	#Energy Tablet
-recipes.remove(<metaitem:battery.re.lv.lithium>);
-recipes.addShaped(<metaitem:battery.re.lv.lithium>, [
-	[<ore:plateRedAlloy>, <ore:stickGold>, <ore:plateRedAlloy>],
-	[<ore:plateSolderingAlloy>, <ore:stickGold>, <ore:plateSolderingAlloy>], 
-	[<ore:plateRedAlloy>, <ore:stickGold>, <ore:plateRedAlloy>]]);
+recipes.remove(<mekanism:energytablet>);
 	
 	#Configurator
 recipes.remove(<mekanism:configurator>);
@@ -305,7 +301,7 @@ mods.jei.JEI.removeAndHide(<mekanism:basicblock:6>);
 
 	#Cardboard Box
 recipes.remove(<mekanism:cardboardbox>);
-mods.bloodmagic.BloodAltar.addRecipe(<mekanism:cardboardbox>, <mekanism:sawdust>, 4, 10000, 10, 2);
+mods.bloodmagic.BloodAltar.addRecipe(<mekanism:cardboardbox>, <thermalfoundation:material:800>, 4, 10000, 10, 2);
 
 	#Furnace removal
 mods.jei.JEI.removeAndHide(<mekanism:machineblock:10>);

@@ -128,28 +128,20 @@ mixer.recipeBuilder()
     .EUt(48)
     .buildAndRegister();	
 
-	distillery.recipeBuilder()
-	.notConsumable(<metaitem:circuit.integrated>.withTag({Configuration: 1}))
-	.fluidInputs([<liquid:empoweredoil> * 50])
-	.fluidOutputs([<liquid:fuel> * 90])
-    .duration(20)
-    .EUt(24)
-    .buildAndRegister();	
-	
-	distillationTower.recipeBuilder()
+distillationTower.recipeBuilder()
 	.fluidInputs([<liquid:empoweredoil> * 50])
 	.fluidOutputs([<liquid:fuel> * 90, <liquid:sulfuric_naphtha> *28, <liquid:sulfuric_gas> * 80])
     .duration(20)
     .EUt(96)
-    .buildAndRegister();		
-	
+    .buildAndRegister();
+
 	#teleport staff
-	recipes.remove(<actuallyadditions:item_tele_staff>);
-	recipes.addShaped(<actuallyadditions:item_tele_staff>, 
+recipes.remove(<actuallyadditions:item_tele_staff>);
+recipes.addShaped(<actuallyadditions:item_tele_staff>, 
 	[[null, <actuallyadditions:item_crystal:2>, <actuallyadditions:block_misc:6>],
 	[null, <appliedenergistics2:material:9>, null], 
 	[<botania:manaresource:13>, <metaitem:battery.re.hv.sodium>, null]]);
-	
+
 	#vertical digger
 mods.jei.JEI.removeAndHide(<actuallyadditions:block_miner>);
 
@@ -480,6 +472,9 @@ recipes.addShaped(<actuallyadditions:block_placer>, [
 	[robotArmMV, <meta_tile_entity:gregtech:hull.mv>, pumpMV],
 	[null, <thermalexpansion:tank>, null]]);
 	
+	#Repairer
+mods.jei.JEI.removeAndHide(<actuallyadditions:block_item_repairer>);
+
 	#lamp controller
 	recipes.remove(<actuallyadditions:block_lamp_powerer>);
 recipes.addShaped(<actuallyadditions:block_lamp_powerer>*4, [
@@ -488,7 +483,7 @@ recipes.addShaped(<actuallyadditions:block_lamp_powerer>*4, [
 	[<ore:plateIron>,<ore:plateIron>,<ore:plateIron>]]);	
 	
 	#filler
-	recipes.remove(<actuallyadditions:item_filling_wand>);
+recipes.remove(<actuallyadditions:item_filling_wand>);
 recipes.addShaped(<actuallyadditions:item_filling_wand>, [
 	[null,<ore:circuitGood>,null],
 	[<actuallyadditions:item_crystal:2>,<scannable:scanner>,<actuallyadditions:item_crystal:2>],
@@ -637,6 +632,10 @@ for i in aaDrills {
 	for i in aaBatteries {
 		mods.jei.JEI.removeAndHide(i);
 	}
+	
+	#Phantom booster
+recipes.remove(<actuallyadditions:block_phantom_booster>);
+recipes.addShaped(<actuallyadditions:block_phantom_booster>, [[<actuallyadditions:item_crystal>, <actuallyadditions:item_crystal:2>, <actuallyadditions:item_crystal>],[<actuallyadditions:item_crystal:2>, <actuallyadditions:block_misc:6>, <actuallyadditions:item_crystal:2>], [<actuallyadditions:item_crystal>, <actuallyadditions:item_crystal:2>, <actuallyadditions:item_crystal>]]);
 	
 	
 	#Baguette

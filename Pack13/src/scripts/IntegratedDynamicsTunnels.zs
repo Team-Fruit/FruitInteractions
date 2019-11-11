@@ -45,18 +45,19 @@ assembler.recipeBuilder()
 
 	#Item Importer / Exporter
 recipes.remove(<integratedtunnels:part_exporter_item_item>);
-recipes.addShapeless(<integratedtunnels:part_exporter_item_item>, [<integratedtunnels:part_importer_item_item>]);
+recipes.addShapeless(<integratedtunnels:part_exporter_item_item>, [<ore:alloyBasic>,<integratedtunnels:part_importer_item_item>]);
 
 	#Item Importer
 recipes.remove(<integratedtunnels:part_importer_item_item>);
+recipes.addShapeless(<integratedtunnels:part_importer_item_item>, [<ore:alloyBasic>,<integratedtunnels:part_exporter_item_item>]);
+
 assembler.recipeBuilder()
 	.inputs([<integratedtunnels:part_interface_item_item>, <translocators:translocator_part>])
 	.outputs(<integratedtunnels:part_importer_item_item>)
 	.EUt(1920)
 	.duration(40)
 	.buildAndRegister();
-recipes.addShapeless(<integratedtunnels:part_importer_item_item>, [<integratedtunnels:part_exporter_item_item>]);
-
+	
 	#Logic Cable
 wiremill.recipeBuilder()
 	.inputs(<integrateddynamics:crystalized_menril_chunk>*2)
@@ -112,8 +113,8 @@ assembler.recipeBuilder()
 centrifuge.recipeBuilder()
 	.inputs(<ore:crystalMenril> * 1)
 	.fluidOutputs([<liquid:menrilresin> * 250, <liquid:methane> * 80])
-	.chancedOutput(<ore:dustCarbon>.firstItem, 2500)
-	.chancedOutput(<metaitem:plant_ball>, 3750)
+	.chancedOutput(<ore:dustCarbon>.firstItem, 2500,500)
+	.chancedOutput(<metaitem:plant_ball>, 3750, 350)
 	.outputs(<ore:dustWood>.firstItem)
 	.duration(150)
 	.EUt(18)

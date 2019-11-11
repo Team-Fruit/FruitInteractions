@@ -9,7 +9,7 @@ import mods.zenstages.Stage;
 	#Blocks
 global blockDragonstone as IItemStack = <botania:storage:4>;
 global blockManadiamond as IItemStack = <botania:storage:3>;
-global blockElementium as IItemStack = <botania:storage:2>;
+global blockElementium as IItemStack = <gregtech:compressed_17:5>;
 global blockTerrasteel as IItemStack = <botania:storage:1>;
 global blockManasteel as IItemStack = <botania:storage>;
 global blockAluminium as IItemStack = <gregtech:compressed_0>;
@@ -48,6 +48,7 @@ global ingotGTTerrasteel as IItemStack = <gregtech:meta_item_1:10807>;
 global ingotGTElementium as IItemStack = <gregtech:meta_item_1:10806>;
 global ingotGTBrass as IItemStack = <gregtech:meta_item_1:10094>;
 global ingotGTStarmetal as IItemStack = <gregtech:meta_item_1:10804>;
+global ingotGTSilicon as IItemStack = <gregtech:meta_item_1:10061>;
 
 	#gems
 global gemCertus as IItemStack = <gregtech:meta_item_1:8202>;	

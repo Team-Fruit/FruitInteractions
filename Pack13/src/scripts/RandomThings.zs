@@ -111,7 +111,7 @@ mods.bloodmagic.AlchemyArray.addRecipe(<randomthings:lotusseeds>, 	<minecraft:wh
 centrifuge.recipeBuilder()
 	.inputs(lotusBlossom)
 	.fluidOutputs([<liquid:xpjuice> * 40])
-	.chancedOutput(<actuallyadditions:item_solidified_experience>, 500)
+	.chancedOutput(<actuallyadditions:item_solidified_experience>, 500, 150)
     .duration(120)
     .EUt(8)
     .buildAndRegister();

@@ -84,7 +84,7 @@ for i in enderUtilDisabled {
 	#Drawbridge / Advanced
 recipes.remove(<enderutilities:draw_bridge>);
 mods.botania.ManaInfusion.addInfusion(<enderutilities:draw_bridge>, 
-	<minecraft:piston>, 100000);
+	<minecraft:sticky_piston>, 50000);
 
 recipes.remove(<enderutilities:draw_bridge:1>);
 recipes.addShapeless(<enderutilities:draw_bridge:1> , [<enderutilities:draw_bridge>]);
@@ -154,7 +154,7 @@ recipes.remove(<enderutilities:enderpart:2>);
 recipes.remove(<enderutilities:handybag>);
 mods.astralsorcery.Altar.addConstellationAltarRecipe("interactions:shaped/internal/altar/handybag", <enderutilities:handybag>, 4000, 200, [
     <ore:plateAluminium>, null, <ore:plateAluminium>, 
-    null, <thermalexpansion:satchel:4>.withTag({ench: [{lvl: 4 as short, id: 39}]}), null,
+    null, <thermalexpansion:satchel:4>, null,
     <ore:plateAluminium>, null, <ore:plateAluminium>,
     <metaitem:field.generator.mv>, <metaitem:field.generator.mv>, <metaitem:field.generator.mv>, <metaitem:field.generator.mv>,
     null, null,
@@ -163,7 +163,7 @@ mods.astralsorcery.Altar.addConstellationAltarRecipe("interactions:shaped/intern
     null, null,]);
 
 recipes.remove(<enderutilities:handybag:1>);
-mods.astralsorcery.Altar.addTraitAltarRecipe("interactions:shaped/internal/altar/handybaglarge", <enderutilities:handybag:1>, 8000, 200, [
+mods.astralsorcery.Altar.addTraitAltarRecipe("interactions:shaped/internal/altar/handybaglarge", <enderutilities:handybag:1>, 7500, 200, [
     <ore:plateTitanium>, null, <ore:plateTitanium>, 
     null, <enderutilities:handybag>, null,
     <ore:plateTitanium>, null, <ore:plateTitanium>,

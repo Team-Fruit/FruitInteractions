@@ -3003,6 +3003,10 @@
     {
       "item": "gregtech:meta_item_1|8202",
       "emc": 0
+    },
+    {
+      "item": "gregtech:meta_item_1|10061",
+      "emc": 0
     }
   ]
 }

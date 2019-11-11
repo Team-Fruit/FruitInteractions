@@ -605,6 +605,8 @@ for oreDictEntry, items in sticksDisabled {
 	oreDictEntry.removeItems(items);
 }
 
+
+
 ////////////////////////
 //	     Plants       //
 ////////////////////////
@@ -1326,6 +1328,8 @@ var petals as IItemStack[] = [
 for i in petals {
 	<ore:botaniaPetals>.add(i);
 }
+
+<ore:itemSilicon>.add(ingotGTSilicon);
 
 	#Botania Petals
 var seaScales as IItemStack[] = [

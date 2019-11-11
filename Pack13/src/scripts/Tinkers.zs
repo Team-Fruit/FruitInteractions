@@ -32,15 +32,6 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("tinkers:creative", "", 100
 	[<ore:ingotCosmicNeutronium>, <appliedenergistics2:material:1>, <ore:ingotCosmicNeutronium>]
 	]);	
 
-	#Glass / GTCE Compat
-mods.tconstruct.Casting.removeTableRecipe(<minecraft:glass_pane>);
-mods.tconstruct.Casting.addTableRecipe(<minecraft:glass_pane>, null, <liquid:glass>, 54);
-mods.tconstruct.Casting.removeBasinRecipe(<tconstruct:clear_glass>);
-mods.tconstruct.Casting.addBasinRecipe(<tconstruct:clear_glass>, null, <liquid:glass>, 144);
-mods.tconstruct.Melting.removeRecipe(<liquid:glass>);
-mods.tconstruct.Melting.addRecipe(<liquid:glass> * 144, <ore:blockGlass>);
-mods.tconstruct.Melting.addRecipe(<liquid:glass> * 144, <ore:sand>);
-mods.tconstruct.Melting.addRecipe(<liquid:glass> * 54, <ore:paneGlass>);
 
 	#Osgloglas
 blast_furnace.recipeBuilder()
@@ -55,15 +46,17 @@ var arditeOre = <tconstruct:ore:1> as IBlock;
 arditeOre.definition.setHarvestLevel("pickaxe", 3);
 
 	#remove ardite ore smelting
-	mods.tconstruct.Melting.removeRecipe(<liquid:ardite>, <tconstruct:ore:1>);
+mods.tconstruct.Melting.removeRecipe(<liquid:ardite>, <tconstruct:ore:1>);
 
 	#enderium melting
-	mods.tconstruct.Melting.removeRecipe(<liquid:enderium>, <thermalfoundation:material:103>);
+mods.tconstruct.Melting.removeRecipe(<liquid:enderium>, <thermalfoundation:material:103>);
+mods.tconstruct.Melting.removeRecipe(<liquid:enderium>, <ore:dustEnderium>.firstItem);
 
 	#signalum melting
-	mods.tconstruct.Melting.removeRecipe(<liquid:signalum>, <thermalfoundation:material:101>);
+mods.tconstruct.Melting.removeRecipe(<liquid:signalum>, <thermalfoundation:material:101>);
+mods.tconstruct.Melting.removeRecipe(<liquid:signalum>, <ore:dustSignalum>.firstItem);
 
-    mods.tconstruct.Melting.removeRecipe(<liquid:osmium>); //hard remove osmium from tinkers
+mods.tconstruct.Melting.removeRecipe(<liquid:osmium>); //hard remove osmium from tinkers
 
 	#alumite - dust
 mixer.recipeBuilder()
@@ -360,7 +353,7 @@ for i in disabledTcon {
 macerator.recipeBuilder()
     .inputs(<ore:oreArdite>)
 	.outputs(<enderio:item_material:30> *2)
-	.chancedOutput(<enderio:item_material:30>, 500)
+	.chancedOutput(<enderio:item_material:30>, 500, 200)
     .duration(80)
     .EUt(24)
     .buildAndRegister();
@@ -957,5 +950,61 @@ for mat, ingot in matEVCastRemove {
 }
 
 #######################################################
+	#Arrow Shaft (Have its own section due to inconsistencies)
+	#LV Arrows Shafts
+var lvShaftMap as IIngredient[string] = {
+	"wood" : <ore:plankWood>,
+	"tnt" : <minecraft:tnt>,
+	"endrod" : <minecraft:end_rod>,
+	"ice" : <ore:blockIce>,
+	"reed" : <ore:sugarcane>,
+	"blaze" : <ore:stickBlaze>,
+	"bone" : <ore:bone>
+};
+
+for mat, ingot in lvShaftMap {
+	mods.gregtech.recipe.RecipeMap.getByName("extruder").recipeBuilder()
+		.inputs(ingot)
+		.notConsumable(<tconstruct:cast>.withTag({PartType: "tconstruct:arrow_shaft"}))
+		.outputs(<tconstruct:arrow_shaft>.withTag({Material: mat}))
+		.duration(1200)
+		.EUt(30)
+		.buildAndRegister();
+}
+
+	#MV Arrow Shafts
+var mvShaftMap as IIngredient[string] = {
+	"livingwood_plustic" : <ore:livingwood>
+};
+
+for mat, ingot in mvShaftMap {
+	mods.gregtech.recipe.RecipeMap.getByName("extruder").recipeBuilder()
+		.inputs(ingot)
+		.notConsumable(<tconstruct:cast>.withTag({PartType: "tconstruct:arrow_shaft"}))
+		.outputs(<tconstruct:arrow_shaft>.withTag({Material: mat}))
+		.duration(1200)
+		.EUt(120)
+		.buildAndRegister();
+}
+
+	#HV Arrow Shafts
+var hvShaftMap as IIngredient[string] = {
+	"enderium_plustic" : <ore:ingotEnderium>
+};
+
+for mat, ingot in hvShaftMap {
+	mods.gregtech.recipe.RecipeMap.getByName("extruder").recipeBuilder()
+		.inputs(ingot)
+		.notConsumable(<tconstruct:cast>.withTag({PartType: "tconstruct:arrow_shaft"}))
+		.outputs(<tconstruct:arrow_shaft>.withTag({Material: mat}))
+		.duration(1200)
+		.EUt(480)
+		.buildAndRegister();
+}
+
+#######################################################
+
+	
+
 
 print("----------------Tinkers End-------------------");

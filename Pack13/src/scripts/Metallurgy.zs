@@ -165,7 +165,7 @@ for dust, gem in autoclaveMapNew {
 	mods.gregtech.recipe.RecipeMap.getByName("autoclave").recipeBuilder()
     	.inputs(dust)
     	.fluidInputs(<liquid:water> * 200)
-    	.chancedOutput(gem.firstItem, 7000)
+    	.chancedOutput(gem.firstItem, 7000, 2700)
     	.duration(2000)
     	.EUt(24)
     	.buildAndRegister();
@@ -173,7 +173,7 @@ for dust, gem in autoclaveMapNew {
 	mods.gregtech.recipe.RecipeMap.getByName("autoclave").recipeBuilder()
     	.inputs(dust)
     	.fluidInputs(<liquid:distilled_water> * 200)
-    	.chancedOutput(gem.firstItem, 9000)
+    	.chancedOutput(gem.firstItem, 9000, 3000)
     	.duration(1000)
     	.EUt(24)
     	.buildAndRegister();
@@ -314,7 +314,7 @@ for mat in gtceMaterials {
 
 var materialMetalMap as int[string] = {
 	"Aluminium" : 1,
-	"Bauxite" : 1,
+	"Bauxite" : 3,
 	"Bentonite" : 1,
 	"Beryllium" : 1,
 	"Calcite" : 1,
@@ -408,7 +408,7 @@ var materialGemMap as int[string] = {
 	"Olivine" : 1,
 	"Ruby" : 1,
 	"Rutile" : 1,
-	"Quartzite" : 1,
+	"Quartzite" : 2,
 	"Sapphire" : 1
 };
 
@@ -492,8 +492,8 @@ var eggMetalOreMap as string[IData[]] = {
 	["Cobaltite", "Cobaltite", 4] : "Cobaltite",
 	["Copper", "Copper", 4] : "Copper",
 	["Tetrahedrite", "Copper", 4] : "Copper",
-	["Malachite", "Copper", 2] : "Copper",
-	["Chalcopyrite", "Copper", 2] : "Copper",
+	["Malachite", "Copper", 4] : "Copper",
+	["Chalcopyrite", "Copper", 4] : "Copper",
 	["Gold", "Gold", 4] : "Gold",
 	["Magnetite", "Gold", 1] : "Gold",
 	["VanadiumMagnetite", "Gold", 1] : "Gold",

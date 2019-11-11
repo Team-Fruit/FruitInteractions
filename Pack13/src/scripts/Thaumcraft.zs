@@ -40,6 +40,26 @@ val assembler = mods.gregtech.recipe.RecipeMap.getByName("assembler");
 		.EUt(480)
 		.buildAndRegister();	
 
+	#Celestial Notes
+var celestialNotesTip as IItemStack[] = [
+	<thaumcraft:celestial_notes>,
+	<thaumcraft:celestial_notes:1>,
+	<thaumcraft:celestial_notes:2>,
+	<thaumcraft:celestial_notes:3>,
+	<thaumcraft:celestial_notes:4>,
+	<thaumcraft:celestial_notes:5>,
+	<thaumcraft:celestial_notes:6>,
+	<thaumcraft:celestial_notes:7>,
+	<thaumcraft:celestial_notes:8>,
+	<thaumcraft:celestial_notes:9>,
+	<thaumcraft:celestial_notes:10>,
+	<thaumcraft:celestial_notes:11>,
+	<thaumcraft:celestial_notes:12>
+	];
+for i in celestialNotesTip {
+	i.addTooltip("Craft it in a Starlight Crafting Altar. Scanning the sky won't work!");
+}
+
 	#Thaumium Plate Conversion
 recipes.addShapeless(plateGTThaumium,[<thaumcraft:plate:2>]);
 recipes.addShapeless(<thaumcraft:plate:2>, [plateGTThaumium]);
@@ -452,7 +472,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("essential_smelter", "ESSEN
 autoclave.recipeBuilder()
     .inputs(<ore:crushedDiamond> * 1)
     .fluidInputs([<liquid:unstable_mana> * 250])
-    .chancedOutput(rareEarth, 2500)
+    .chancedOutput(rareEarth, 2500, 500)
     .duration(500)
     .EUt(24)
     .buildAndRegister();
@@ -461,7 +481,7 @@ autoclave.recipeBuilder()
 autoclave.recipeBuilder()
     .inputs(<ore:crushedCoal> * 1)
     .fluidInputs([<liquid:unstable_mana> * 250])
-    .chancedOutput(rareEarth, 500)
+    .chancedOutput(rareEarth, 500, 150)
     .duration(500)
     .EUt(24)
     .buildAndRegister();
@@ -470,7 +490,7 @@ autoclave.recipeBuilder()
 autoclave.recipeBuilder()
     .inputs(<ore:crushedCinnabar> * 1)
     .fluidInputs([<liquid:unstable_mana> * 250])
-    .chancedOutput(rareEarth, 1500)
+    .chancedOutput(rareEarth, 1500, 350)
     .duration(500)
     .EUt(24)
     .buildAndRegister();
@@ -479,7 +499,7 @@ autoclave.recipeBuilder()
 autoclave.recipeBuilder()
     .inputs(<ore:crushedRedstone> * 1)
     .fluidInputs([<liquid:unstable_mana> * 250])
-    .chancedOutput(rareEarth, 1000)
+    .chancedOutput(rareEarth, 1000, 250)
     .duration(500)
     .EUt(24)
     .buildAndRegister();

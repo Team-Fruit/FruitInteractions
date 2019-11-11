@@ -72,7 +72,7 @@ mixer.recipeBuilder()
 	.fluidInputs(<liquid:ender> * 1000)
 	.outputs(<ore:dustEnderium>.firstItem * 2)
 	.duration(120)
-	.EUt(32)
+	.EUt(30)
 	.buildAndRegister();
 
 	#Lumium Ingot
@@ -121,7 +121,7 @@ mixer.recipeBuilder()
 	.fluidInputs(<liquid:redstone> * 1000)
 	.outputs(<ore:dustSignalum>.firstItem * 2)
 	.duration(120)
-	.EUt(32)
+	.EUt(30)
 	.buildAndRegister();
 
 	#petrotheym dust

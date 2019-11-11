@@ -100,7 +100,7 @@ RecipeBuilder.get("basic")
 	#manasteel block conversion
 	recipes.addShapeless(<gregtech:compressed_17:4>, [<botania:storage>]);
 recipes.addShapeless(<botania:storage>, [<gregtech:compressed_17:4>]);
-	
+		
 	#diluted mana pool
 recipes.remove(<botania:pool:2>);
 mods.astralsorcery.Altar.addDiscoveryAltarRecipe("interactions:dilutedmanapool", <botania:pool:2>, 120, 600, [
@@ -486,7 +486,7 @@ recipes.remove(<botania:quartz:6>);
 autoclave.recipeBuilder()
     .inputs(<minecraft:quartz> * 1)
     .fluidInputs([<liquid:astralsorcery.liquidstarlight> * 50])
-    .chancedOutput(<botania:quartz:6>, 9000)
+    .chancedOutput(<botania:quartz:6>, 9000, 1100)
     .duration(100)
     .EUt(24)
     .buildAndRegister();
@@ -938,6 +938,7 @@ mods.bloodmagic.AlchemyArray.addRecipe(<botania:grassseeds:5>, <projecte:item.pe
 	#Manasteel
 mods.botania.ManaInfusion.removeRecipe(<botania:manaresource>);
 mods.botania.ManaInfusion.removeRecipe(<botania:storage>);
+mods.botania.ManaInfusion.removeRecipe(<botania:storage:3>);
 mods.botania.ManaInfusion.addInfusion(<astralsorcery:blockmarble>, <gregtech:mineral>, 500);
 mods.botania.ManaInfusion.addInfusion(<botania:manaresource:17>, <ore:nuggetWroughtIron>.firstItem, 5000);
 mods.botania.ManaInfusion.addInfusion(<botania:manaresource>, <ore:ingotWroughtIron>.firstItem, 40000);

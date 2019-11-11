@@ -299,7 +299,7 @@ furnace.remove(<libvulpes:productdust>);
 macerator.recipeBuilder()
     .inputs(<ore:oreDilithium>)
 	.outputs(<libvulpes:productdust>)
-	.chancedOutput(<ore:dustLithium>.firstItem, 1000)
+	.chancedOutput(<ore:dustLithium>.firstItem, 1000, 150)
     .duration(40)
     .EUt(148)
     .buildAndRegister();
@@ -473,6 +473,7 @@ assembler.recipeBuilder()
 recipes.remove(basicMachineStructure);
 assembler.recipeBuilder()
   .inputs(<ore:plateAluminium> * 4, <ore:stickAluminium> * 4)
+  .notConsumable(integratedCircuit.withTag({Configuration: 2}))
   .outputs(basicMachineStructure * 4)
   .duration(200)
   .EUt(68)

@@ -15,10 +15,12 @@ print("---------------Zen Events Start------------------");
 
 Handler.onEntityUpdate(
 		PredicateBuilder.create()
+			.isNthTick(10)
+			.isRemote()
+			.negateLatest()
+			.isRandom(0.1)
 			.isInstanceOf("mightyenderchicken:ent_EnderChicken")
 			.isInBlockArea(<blockstate:animus:blockfluidantimatter>.block,3,3,3,3)
-			.isNthTick(10)
-			.isRandom(0.1)
 		,function(event as EntityLivingUpdateEvent){
 		//print ("event triggered correctly for enderchicken");
 		val neutron = <avaritia:resource:2>;

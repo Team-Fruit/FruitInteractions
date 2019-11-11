@@ -269,6 +269,9 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe("simpleteleporters:teleporter",
 	<lteleporters:endercrystal>, <astralsorcery:blockmarble:2>, <lteleporters:endercrystal>, 
 	<astralsorcery:blockmarble:6>, <astralsorcery:blockmarble:6>, <astralsorcery:blockmarble:6>]);
 		
+	#little tiles storage block
+	recipes.remove(<littletiles:ltstorageblocktile>);	
+		
 	#portalGun fuel
 furnace.remove(<portalgun:item_dust_ender_pearl>);
 mods.jei.JEI.removeAndHide(<portalgun:item_dust_ender_pearl>);
